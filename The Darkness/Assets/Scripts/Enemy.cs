@@ -16,31 +16,60 @@ public class Enemy : MonoBehaviour
     public Transform player;
     public float magicForce = 20f;
 
+    private bool inRange = false;
+    public RaycastHit2D hit;
+
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
 
-        timeBtwShots = startTimeBtwShots;
-        
+        timeBtwShots = startTimeBtwShots;        
     }
 
     void Update()
     {
-        if(Vector2.Distance(transform.position, player.position) > stoppingDistance)
+        //inRange = Physics2D.Raycast(transform.position, player.position, out hit);       
+        
+        float range = Vector2.Distance(transform.position, player.position);
+
+        if (range < 50f)
+        {
+            inRange = true;
+            Debug.DrawLine(transform.position, player.transform.position, Color.cyan);
+        }
+        else
+        {
+            inRange = false;
+            Debug.DrawLine(transform.position, player.transform.position, Color.red);
+        }        
+
+        if(inRange == true)
+        {
+            Movement();
+            Shooting();
+        }        
+    }
+
+    void Movement()
+    {
+        if (Vector2.Distance(transform.position, player.position) > stoppingDistance)
         {
             transform.position = Vector2.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
         }
 
-        else if(Vector2.Distance(transform.position, player.position) < stoppingDistance && Vector2.Distance(transform.position, player.position) > retreatDistance)
+        else if (Vector2.Distance(transform.position, player.position) < stoppingDistance && Vector2.Distance(transform.position, player.position) > retreatDistance)
         {
             transform.position = this.transform.position;
         }
-        else if(Vector2.Distance(transform.position, player.position) < retreatDistance)
+        else if (Vector2.Distance(transform.position, player.position) < retreatDistance)
         {
             transform.position = Vector2.MoveTowards(transform.position, player.position, -speed * Time.deltaTime);
         }
+    }
 
-        if(timeBtwShots <= 0)
+    void Shooting()
+    {
+        if (timeBtwShots <= 0)
         {
             Instantiate(orbPrefab, transform.position, Quaternion.identity);
             timeBtwShots = startTimeBtwShots;
@@ -49,6 +78,5 @@ public class Enemy : MonoBehaviour
         {
             timeBtwShots -= Time.deltaTime;
         }
-
     }
 }
