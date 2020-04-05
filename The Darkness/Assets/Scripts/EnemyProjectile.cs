@@ -13,16 +13,12 @@ public class EnemyProjectile : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
         target = new Vector2(player.position.x, player.position.y);
+
     }
     
     void Update()
     {
-        transform.position = Vector2.MoveTowards(transform.position, target, speed * Time.deltaTime);
-
-        if(transform.position.x == target.x && transform.position.y == target.y)
-        {
-            DestroyProjectile();
-        }
+        Shots();
     }
 
     public void OnCollisionEnter2D(Collision2D collision)
@@ -30,6 +26,16 @@ public class EnemyProjectile : MonoBehaviour
         if(collision.gameObject.CompareTag("Player"))
         {
             Destroy(gameObject);
+        }
+    }
+
+    void Shots()
+    {
+        transform.position = Vector2.MoveTowards(transform.position, target, speed * Time.deltaTime);
+
+        if (transform.position.x == target.x && transform.position.y == target.y)
+        {
+            DestroyProjectile();
         }
     }
 
