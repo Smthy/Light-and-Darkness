@@ -6,7 +6,6 @@ public class Shooting : MonoBehaviour
 {
     public Transform firePoint;
     public GameObject magicPrefab;
-    
 
     public float magicForce = 20f;
 
