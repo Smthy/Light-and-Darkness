@@ -31,6 +31,10 @@ public class EnemyProjectile : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        if(collision.gameObject.CompareTag("Shield"))
+        {
+            Destroy(gameObject);
+        }
     }
 
     void DestroyProjectile()

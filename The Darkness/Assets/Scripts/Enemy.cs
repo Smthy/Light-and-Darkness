@@ -23,16 +23,16 @@ public class Enemy : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
 
-        timeBtwShots = startTimeBtwShots;        
+        timeBtwShots = startTimeBtwShots;
     }
 
     void Update()
     {
         //inRange = Physics2D.Raycast(transform.position, player.position, out hit);       
-        
+
         float range = Vector2.Distance(transform.position, player.position);
 
-        if (range < 50f)
+        if (range < 25f)
         {
             inRange = true;
             Debug.DrawLine(transform.position, player.transform.position, Color.cyan);
@@ -41,13 +41,13 @@ public class Enemy : MonoBehaviour
         {
             inRange = false;
             Debug.DrawLine(transform.position, player.transform.position, Color.red);
-        }        
+        }
 
-        if(inRange == true)
+        if (inRange == true)
         {
             Movement();
             Shooting();
-        }        
+        }
     }
 
     void Movement()

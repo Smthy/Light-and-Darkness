@@ -7,7 +7,14 @@ public class Shooting : MonoBehaviour
     public Transform firePoint;
     public GameObject magicPrefab;
 
+    public GameObject shield;
+
     public float magicForce = 20f;
+
+    public void Start()
+    {
+        shield.SetActive(false);
+    }
 
     void Update()
     {
@@ -15,6 +22,16 @@ public class Shooting : MonoBehaviour
         {
             Shoot();
         }
+
+        if (Input.GetButtonDown("Fire2"))
+        {
+            shield.SetActive(true);
+        }
+
+        if (Input.GetButtonUp("Fire2"))
+        {
+            shield.SetActive(false);            
+        }      
     }
 
     void Shoot()
@@ -23,5 +40,5 @@ public class Shooting : MonoBehaviour
         Rigidbody2D rb = magic.GetComponent<Rigidbody2D>();
 
         rb.AddForce(firePoint.up * magicForce, ForceMode2D.Impulse);
-    }
+    }   
 }
