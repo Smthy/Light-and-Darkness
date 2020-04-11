@@ -7,6 +7,7 @@ TagManager:
   - Enemy
   - Ground
   - Shield
+  - Chest
   layers:
   - Default
   - TransparentFX
