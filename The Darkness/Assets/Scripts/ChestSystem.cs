@@ -4,15 +4,18 @@ using UnityEngine;
 
 public class ChestSystem : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
+    public GameObject chestClosed, chestOpen, player;   
+
+    public void OnTriggerEnter2D(Collider2D collision)
     {
-        
+        if(collision.CompareTag("Player"))
+        {
+            if (Input.GetButtonDown("Fire1"))
+            {
+                Debug.Log("E has been clicked");
+                chestClosed.SetActive(false);
+            }            
+        }
     }
 }
