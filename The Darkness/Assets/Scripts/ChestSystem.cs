@@ -4,18 +4,17 @@ using UnityEngine;
 
 public class ChestSystem : MonoBehaviour
 {
-
     public GameObject chestClosed, chestOpen, player;   
 
-    public void OnTriggerEnter2D(Collider2D collision)
+    public void OnTriggerStay2D(Collider2D collision)
     {
-        if(collision.CompareTag("Player"))
+        if(collision.CompareTag("Player"))  
         {
-            if (Input.GetButtonDown("Fire1"))
+            if(Input.GetKeyDown(KeyCode.E))
             {
-                Debug.Log("E has been clicked");
                 chestClosed.SetActive(false);
-            }            
+                Debug.Log("E has been clicked");
+            }                                        
         }
     }
 }
