@@ -51,6 +51,15 @@ TagManager:
   - name: Foreground
     uniqueID: 2078451503
     locked: 0
+  - name: Chest
+    uniqueID: 681077427
+    locked: 0
+  - name: Entities
+    uniqueID: 1513812955
+    locked: 0
+  - name: Shield
+    uniqueID: 2161614717
+    locked: 0
   - name: Projectiles
     uniqueID: 1378353333
     locked: 0

@@ -2,17 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerSpells : MonoBehaviour
+[CreateAssetMenu(fileName = "New Spell", menuName = "Player Spells")]
+public class PlayerSpells : ScriptableObject
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public string spellName;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public GameObject spell;
+
+    public float lifetime;
+    public float damage;
+    public float knockback;
+
+    public bool continuousDamage;
+    public float cDamage;
+    public float cLifetime;
 }
