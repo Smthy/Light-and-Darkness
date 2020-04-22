@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 7966655832140008821}
   - component: {fileID: 4794889360750535159}
   - component: {fileID: 8799999845708544938}
-  - component: {fileID: 675513705535338421}
   - component: {fileID: 8003947313396097790}
   m_Layer: 0
   m_Name: PDChestDrop
@@ -104,23 +103,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 0
---- !u!114 &675513705535338421
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8539884590468593384}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4407a57443a28144e8301a4951524f5a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentSpell: {fileID: 0}
-  impact: {fileID: 11400000, guid: 321b17e318827e840a2ec2a0c97bf910, type: 2}
-  fireball: {fileID: 11400000, guid: e866216fe7b8095488515970ea5af4ee, type: 2}
-  dart: {fileID: 11400000, guid: c12cddf12a04a3047ba3638f8986be80, type: 2}
-  poisionDart: {fileID: 11400000, guid: 5a888829de5d4324ab23793e28e2b720, type: 2}
 --- !u!61 &8003947313396097790
 BoxCollider2D:
   m_ObjectHideFlags: 0

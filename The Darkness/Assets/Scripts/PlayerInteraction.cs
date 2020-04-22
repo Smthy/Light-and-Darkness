@@ -17,7 +17,7 @@ public class PlayerInteraction : MonoBehaviour
     //Chest System
     public void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.CompareTag("Chest"))
+        if (collision.CompareTag("Player"))
         {
             if (Input.GetKeyDown(KeyCode.E))
             {

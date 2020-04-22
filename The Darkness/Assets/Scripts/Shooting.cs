@@ -37,19 +37,36 @@ public class Shooting : MonoBehaviour
     {
         if(collision.CompareTag("PD"))
         {
-            currentSpell = poisionDart;
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                currentSpell = poisionDart;
+                Destroy(collision.gameObject);
+            }
+                
         }
         if (collision.CompareTag("FB"))
         {
-            currentSpell = fireball;
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                currentSpell = fireball;
+                Destroy(collision.gameObject);
+            }
         }
         if (collision.CompareTag("IO"))
         {
-            currentSpell = impact;
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                currentSpell = impact;
+                Destroy(collision.gameObject);
+            }
         }
         if (collision.CompareTag("D"))
         {
-            currentSpell = dart;
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                currentSpell = dart;
+                Destroy(collision.gameObject);
+            }
         }
     }
     
