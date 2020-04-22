@@ -14,9 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spellName: Impact Ball
   spell: {fileID: 6135901281433787424, guid: 24ddaf1c6a9fc204380f1b0ed76bedf0, type: 3}
-  lifetime: 10
-  damage: 20
+  lifetime: 1
+  damage: 12
   knockback: 10
-  continuousDamage: 0
-  cDamage: 0
-  cLifetime: 0

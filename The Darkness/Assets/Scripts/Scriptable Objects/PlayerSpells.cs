@@ -12,8 +12,4 @@ public class PlayerSpells : ScriptableObject
     public float lifetime;
     public float damage;
     public float knockback;
-
-    public bool continuousDamage;
-    public float cDamage;
-    public float cLifetime;
 }

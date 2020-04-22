@@ -29,7 +29,7 @@ public class Shooting : MonoBehaviour
     {
         GameObject magic = Instantiate(currentSpell.spell, firePoint.position, firePoint.rotation);
         Rigidbody2D rb = magic.GetComponent<Rigidbody2D>();
-        rb.AddForce(firePoint.up * magicForce, ForceMode2D.Impulse);
+        rb.AddForce(firePoint.up * magicForce, ForceMode2D.Impulse);        
     }
 
     
@@ -68,6 +68,5 @@ public class Shooting : MonoBehaviour
                 Destroy(collision.gameObject);
             }
         }
-    }
-    
+    }    
 }
