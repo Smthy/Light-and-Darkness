@@ -69,7 +69,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1513812955
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 10
   m_Sprite: {fileID: 21300000, guid: 21f6df86d7405d944a7115326f4677e9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -124,7 +124,7 @@ MonoBehaviour:
   stoppingDistance: 8
   retreatDistance: 5
   startTimeBtwShots: 2
-  orbPrefab: {fileID: 8177054429602964011, guid: 1d233942ce44a8248ad6891ff30677a8,
+  orbPrefab: {fileID: 5419900750565359936, guid: b917e60b5521904409ee32201fa69c1d,
     type: 3}
   player: {fileID: 0}
   magicForce: 20

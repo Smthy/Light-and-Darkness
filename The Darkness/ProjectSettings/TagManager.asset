@@ -8,6 +8,10 @@ TagManager:
   - Ground
   - Shield
   - Chest
+  - PD
+  - FB
+  - IO
+  - D
   layers:
   - Default
   - TransparentFX

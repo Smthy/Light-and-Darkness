@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5496483917832831355}
   - component: {fileID: 8417878907741805350}
   - component: {fileID: 4577267698317632750}
+  - component: {fileID: 7936358048892320028}
   m_Layer: 0
   m_Name: Dart
   m_TagString: Untagged
@@ -131,3 +132,20 @@ PolygonCollider2D:
     - - {x: 0, y: 0.5}
       - {x: -0.4330127, y: -0.25000003}
       - {x: 0.43301272, y: -0.24999996}
+--- !u!114 &7936358048892320028
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8668992439911011940}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4407a57443a28144e8301a4951524f5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentSpell: {fileID: 0}
+  impact: {fileID: 11400000, guid: 321b17e318827e840a2ec2a0c97bf910, type: 2}
+  fireball: {fileID: 11400000, guid: e866216fe7b8095488515970ea5af4ee, type: 2}
+  dart: {fileID: 11400000, guid: c12cddf12a04a3047ba3638f8986be80, type: 2}
+  poisionDart: {fileID: 11400000, guid: 5a888829de5d4324ab23793e28e2b720, type: 2}
