@@ -71,3 +71,6 @@ TagManager:
   - name: Crystal
     uniqueID: 3878403449
     locked: 0
+  - name: Roof
+    uniqueID: 1580439111
+    locked: 0
