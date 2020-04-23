@@ -68,3 +68,6 @@ TagManager:
   - name: Projectiles
     uniqueID: 1378353333
     locked: 0
+  - name: Crystal
+    uniqueID: 3878403449
+    locked: 0
