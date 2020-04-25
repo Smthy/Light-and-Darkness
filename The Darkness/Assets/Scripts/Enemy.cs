@@ -17,7 +17,7 @@ public class Enemy : MonoBehaviour
     public float magicForce = 20f;
 
     private bool inRange = false;
-    public RaycastHit2D hit;
+     
 
     void Start()
     {
@@ -28,8 +28,6 @@ public class Enemy : MonoBehaviour
 
     void Update()
     {
-        //inRange = Physics2D.Raycast(transform.position, player.position, out hit);       
-
         float range = Vector2.Distance(transform.position, player.position);
 
         if (range < 20f)

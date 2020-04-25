@@ -19,10 +19,14 @@ public class Projectiles : MonoBehaviour
         {
             EnemyHealth enemyHealth = collision.transform.GetComponent<EnemyHealth>();
             enemyHealth.TakeDamage(currentSpell.damage);
+            GameObject effect = Instantiate(currentSpell.destroyEffect, transform.position, Quaternion.identity);
+            Destroy(effect, 5f);
             Destroy(gameObject);
         }
         if(collision.gameObject.tag == "Obstical" || collision.gameObject.tag == "Chest")
         {
+            GameObject effect1 = Instantiate(currentSpell.destroyEffect, transform.position, Quaternion.identity);
+            Destroy(effect1, 5f);
             Destroy(gameObject);
         }
  
@@ -37,7 +41,6 @@ public class Projectiles : MonoBehaviour
                 currentSpell = poisionDart;
                 Destroy(collision.gameObject);
             }
-
         }
         if (collision.CompareTag("FB"))
         {
@@ -68,6 +71,8 @@ public class Projectiles : MonoBehaviour
     IEnumerator DestroyProjectile()
     {
         yield return new WaitForSeconds(currentSpell.lifetime);
+        GameObject effect2 = Instantiate(currentSpell.destroyEffect, transform.position, Quaternion.identity);
+        Destroy(effect2, 5f);
         Destroy(gameObject);
     }
 }

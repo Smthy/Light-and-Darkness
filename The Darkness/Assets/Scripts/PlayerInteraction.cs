@@ -33,7 +33,7 @@ public class PlayerInteraction : MonoBehaviour
 
                 Debug.Log("E has been clicked");
                 GameObject mySpells = Spells[Random.Range(0, Spells.Length)];
-                Instantiate(mySpells, transform.position, Quaternion.identity);
+                Instantiate(mySpells, transform.position, transform.rotation);
             }
         }
     }

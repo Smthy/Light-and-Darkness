@@ -8,6 +8,7 @@ public class PlayerSpells : ScriptableObject
     public string spellName;
 
     public GameObject spell;
+    public GameObject destroyEffect;
 
     public float lifetime;
     public float damage;

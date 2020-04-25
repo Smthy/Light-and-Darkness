@@ -14,6 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spellName: Dart
   spell: {fileID: 8668992439911011940, guid: 57860bc383575e242a9810b8f3d8a054, type: 3}
+  destroyEffect: {fileID: 2269408171141003342, guid: 9ba4e7ee9e7d5fc4da70d40020f3a767,
+    type: 3}
   lifetime: 2
-  damage: 8
+  damage: 15
   knockback: 2

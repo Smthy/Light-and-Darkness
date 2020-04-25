@@ -14,6 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spellName: Fire Ball
   spell: {fileID: 6672150132899319770, guid: e243b81fc96d9d34ab120d9c3726621c, type: 3}
+  destroyEffect: {fileID: 1743682730748420658, guid: 529b5c98223b4ca4ba90b029d8e9a372,
+    type: 3}
   lifetime: 3
-  damage: 5
+  damage: 18
   knockback: 1

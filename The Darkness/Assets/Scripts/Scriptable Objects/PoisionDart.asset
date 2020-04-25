@@ -14,6 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spellName: Poision Dark
   spell: {fileID: 8539884590468593384, guid: 484e1f2ddb38a3f4e9cb415acf04f55b, type: 3}
+  destroyEffect: {fileID: 1798249554434622424, guid: fbb599ad30115664f8a85012f1ec5f02,
+    type: 3}
   lifetime: 2
-  damage: 10
+  damage: 20
   knockback: 2

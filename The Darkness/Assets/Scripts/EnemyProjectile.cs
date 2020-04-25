@@ -13,6 +13,7 @@ public class EnemyProjectile : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
         target = new Vector2(player.position.x, player.position.y);
+        StartCoroutine(DestroyProjectile());
     }
     
     void Update()
@@ -21,7 +22,7 @@ public class EnemyProjectile : MonoBehaviour
 
         if(transform.position.x == target.x && transform.position.y == target.y)
         {
-            DestroyProjectile();
+            Destroy(gameObject);
         }
     }
 
@@ -37,8 +38,9 @@ public class EnemyProjectile : MonoBehaviour
         }
     }
 
-    void DestroyProjectile()
+    IEnumerator DestroyProjectile()
     {
+        yield return new WaitForSeconds(2f);
         Destroy(gameObject);
     }
 }
