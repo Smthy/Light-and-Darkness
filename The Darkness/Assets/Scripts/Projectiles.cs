@@ -29,6 +29,11 @@ public class Projectiles : MonoBehaviour
             Destroy(effect1, 5f);
             Destroy(gameObject);
         }
+        if(collision.gameObject.tag == "Crystal")
+        {
+            CrystalHealth crystalHealth = collision.transform.GetComponent<CrystalHealth>();
+            crystalHealth.TakeDamage(currentSpell.damage);
+        }
  
     }
 

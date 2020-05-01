@@ -13,6 +13,8 @@ TagManager:
   - IO
   - D
   - Obstical
+  - Crystal
+  - Boss
   layers:
   - Default
   - TransparentFX
