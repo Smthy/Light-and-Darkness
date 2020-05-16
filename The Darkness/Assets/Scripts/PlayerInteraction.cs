@@ -5,7 +5,6 @@ using UnityEngine.Experimental.Rendering.LWRP;
 
 public class PlayerInteraction : MonoBehaviour
 {
-    //Chest System
     public GameObject chestClosed, chestOpen, player;
     public Light2D chestLights;
    
@@ -19,7 +18,7 @@ public class PlayerInteraction : MonoBehaviour
         chestLights.GetComponent<Light>();
         chestLights.intensity = 1.75f;
     }
-    //Chest System
+
     public void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))

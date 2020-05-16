@@ -19,7 +19,6 @@ public class BossMovement : MonoBehaviour
 
     public Transform player;
     public float magicForce = 20f;
-
     private bool inRange = false;
 
     public Light2D bossLights;
@@ -98,19 +97,14 @@ public class BossMovement : MonoBehaviour
             if(mySA == 1)
             {
                 Instantiate(orbPrefab, transform.position, Quaternion.identity);
-
                 Instantiate(orbPrefab, transform.position, Quaternion.identity);
-
                 Instantiate(orbPrefab, transform.position, Quaternion.identity);
             }
             else if(mySA == 2)
             {
                 Instantiate(orbPrefab, transform.position, Quaternion.identity);
-
                 Instantiate(orbPrefab, transform.position, Quaternion.identity);
-
                 Instantiate(orbPrefab, transform.position, Quaternion.identity);
-
                 Instantiate(orbPrefab, transform.position, Quaternion.identity);
             }
                                  

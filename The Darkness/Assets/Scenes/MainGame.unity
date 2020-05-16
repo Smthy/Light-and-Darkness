@@ -1779,6 +1779,7 @@ MonoBehaviour:
   health: 1000
   crystalLight: {fileID: 1866449942}
   globalLight: {fileID: 1366767807}
+  boss: {fileID: 938548901}
 --- !u!1 &462368323
 GameObject:
   m_ObjectHideFlags: 0
@@ -3463,6 +3464,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: BossProtector (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 7137535119561254101, guid: b98971fe492bd7d41a93d953c25b8ca6,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7137535119561254101, guid: b98971fe492bd7d41a93d953c25b8ca6,
+        type: 3}
+      propertyPath: m_TagString
+      value: BP
+      objectReference: {fileID: 0}
     - target: {fileID: 7137535119561254105, guid: b98971fe492bd7d41a93d953c25b8ca6,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3538,6 +3549,17 @@ PrefabInstance:
       propertyPath: boss
       value: 
       objectReference: {fileID: 938548901}
+    - target: {fileID: 2898846307852526994, guid: b98971fe492bd7d41a93d953c25b8ca6,
+        type: 3}
+      propertyPath: destroyEffect
+      value: 
+      objectReference: {fileID: 9017655130100140723, guid: 8d28c97113477e743832a9b16d1f0280,
+        type: 3}
+    - target: {fileID: 2898846307852526994, guid: b98971fe492bd7d41a93d953c25b8ca6,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 194615802}
     - target: {fileID: 2372889598006046089, guid: b98971fe492bd7d41a93d953c25b8ca6,
         type: 3}
       propertyPath: m_Color.g
@@ -4281,7 +4303,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -4293,9 +4315,9 @@ BoxCollider2D:
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
-  m_AutoTiling: 0
+  m_AutoTiling: 1
   serializedVersion: 2
-  m_Size: {x: 0.75, y: 0.75}
+  m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
 --- !u!114 &938548907
 MonoBehaviour:
@@ -4309,9 +4331,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a5275cfef95b29479db395ed3e49dc0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
-  stoppingDistance: 8
-  retreatDistance: 5
+  speed: 6
+  stoppingDistance: 6
+  retreatDistance: 4
   startTimeBtwShots: 2
   specialAttackStartTimeBtwShots: 15
   orbPrefab: {fileID: 5419900750565359936, guid: b917e60b5521904409ee32201fa69c1d,
@@ -6085,6 +6107,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: BossProtector (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 7137535119561254101, guid: b98971fe492bd7d41a93d953c25b8ca6,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7137535119561254101, guid: b98971fe492bd7d41a93d953c25b8ca6,
+        type: 3}
+      propertyPath: m_TagString
+      value: BP
+      objectReference: {fileID: 0}
     - target: {fileID: 7137535119561254105, guid: b98971fe492bd7d41a93d953c25b8ca6,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6160,6 +6192,17 @@ PrefabInstance:
       propertyPath: boss
       value: 
       objectReference: {fileID: 938548901}
+    - target: {fileID: 2898846307852526994, guid: b98971fe492bd7d41a93d953c25b8ca6,
+        type: 3}
+      propertyPath: destroyEffect
+      value: 
+      objectReference: {fileID: 9017655130100140723, guid: 8d28c97113477e743832a9b16d1f0280,
+        type: 3}
+    - target: {fileID: 2898846307852526994, guid: b98971fe492bd7d41a93d953c25b8ca6,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 194615802}
     - target: {fileID: 2372889598006046089, guid: b98971fe492bd7d41a93d953c25b8ca6,
         type: 3}
       propertyPath: m_Color.g
@@ -6188,6 +6231,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: BossProtector (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7137535119561254101, guid: b98971fe492bd7d41a93d953c25b8ca6,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7137535119561254101, guid: b98971fe492bd7d41a93d953c25b8ca6,
+        type: 3}
+      propertyPath: m_TagString
+      value: BP
       objectReference: {fileID: 0}
     - target: {fileID: 7137535119561254105, guid: b98971fe492bd7d41a93d953c25b8ca6,
         type: 3}
@@ -6264,6 +6317,17 @@ PrefabInstance:
       propertyPath: boss
       value: 
       objectReference: {fileID: 938548901}
+    - target: {fileID: 2898846307852526994, guid: b98971fe492bd7d41a93d953c25b8ca6,
+        type: 3}
+      propertyPath: destroyEffect
+      value: 
+      objectReference: {fileID: 9017655130100140723, guid: 8d28c97113477e743832a9b16d1f0280,
+        type: 3}
+    - target: {fileID: 2898846307852526994, guid: b98971fe492bd7d41a93d953c25b8ca6,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 194615802}
     - target: {fileID: 2372889598006046089, guid: b98971fe492bd7d41a93d953c25b8ca6,
         type: 3}
       propertyPath: m_Color.g
@@ -8910,6 +8974,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: BossProtector
       objectReference: {fileID: 0}
+    - target: {fileID: 7137535119561254101, guid: b98971fe492bd7d41a93d953c25b8ca6,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7137535119561254101, guid: b98971fe492bd7d41a93d953c25b8ca6,
+        type: 3}
+      propertyPath: m_TagString
+      value: BP
+      objectReference: {fileID: 0}
     - target: {fileID: 7137535119561254105, guid: b98971fe492bd7d41a93d953c25b8ca6,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8985,6 +9059,17 @@ PrefabInstance:
       propertyPath: boss
       value: 
       objectReference: {fileID: 938548901}
+    - target: {fileID: 2898846307852526994, guid: b98971fe492bd7d41a93d953c25b8ca6,
+        type: 3}
+      propertyPath: destroyEffect
+      value: 
+      objectReference: {fileID: 9017655130100140723, guid: 8d28c97113477e743832a9b16d1f0280,
+        type: 3}
+    - target: {fileID: 2898846307852526994, guid: b98971fe492bd7d41a93d953c25b8ca6,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 194615802}
     - target: {fileID: 2372889598006046089, guid: b98971fe492bd7d41a93d953c25b8ca6,
         type: 3}
       propertyPath: m_Color.g

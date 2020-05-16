@@ -8,6 +8,7 @@ public class CrystalHealth : MonoBehaviour
     public float health = 1000f;
     public Light2D crystalLight;
     public Light2D globalLight;
+    public GameObject boss;
 
     public void Start()
     {
@@ -16,6 +17,8 @@ public class CrystalHealth : MonoBehaviour
 
         crystalLight.intensity = 1f;
         globalLight.intensity = 1f;
+
+        boss.SetActive(false);
     }
 
     public void Update()
@@ -39,6 +42,7 @@ public class CrystalHealth : MonoBehaviour
         }
         else if(health > 0)
         {
+            boss.SetActive(true);
             crystalLight.intensity = 0.25f;
             globalLight.intensity = 0.25f;
         }

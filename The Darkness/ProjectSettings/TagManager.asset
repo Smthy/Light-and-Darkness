@@ -15,6 +15,7 @@ TagManager:
   - Obstical
   - Crystal
   - Boss
+  - BP
   layers:
   - Default
   - TransparentFX

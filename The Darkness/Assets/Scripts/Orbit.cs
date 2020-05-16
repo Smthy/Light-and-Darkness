@@ -8,15 +8,20 @@ public class Orbit : MonoBehaviour
     public Vector3 axis;
     public float angle;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public GameObject player;
+    public GameObject destroyEffect;
 
-    // Update is called once per frame
     void Update()
     {
         transform.RotateAround(boss.transform.position, axis, angle);
+    }
+
+    public void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.tag == "Player")
+        {
+            GameObject effect = Instantiate(destroyEffect, transform.position, Quaternion.identity);
+            Destroy(effect, 5f);
+        }
     }
 }
