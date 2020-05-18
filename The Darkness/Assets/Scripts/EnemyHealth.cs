@@ -6,11 +6,6 @@ public class EnemyHealth : MonoBehaviour
 {
     public float health = 100f;
 
-    public void Update()
-    {
-        Debug.Log(health);
-    }
-
     public void TakeDamage(float amount)
     {
         health -= amount;

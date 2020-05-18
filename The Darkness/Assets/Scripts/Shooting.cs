@@ -27,6 +27,7 @@ public class Shooting : MonoBehaviour
 
     void Shoot()
     {
+        print(currentSpell.destroyEffect);
         GameObject magic = Instantiate(currentSpell.spell, firePoint.position, firePoint.rotation);
         Rigidbody2D rb = magic.GetComponent<Rigidbody2D>();
         rb.AddForce(firePoint.up * magicForce, ForceMode2D.Impulse);        

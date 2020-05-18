@@ -22,9 +22,7 @@ public class CrystalHealth : MonoBehaviour
     }
 
     public void Update()
-    {
-        Debug.Log(health);
-
+    { 
         if(health > 750)
         {
             crystalLight.intensity = 1f;

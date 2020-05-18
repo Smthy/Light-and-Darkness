@@ -4,50 +4,32 @@ using UnityEngine;
 
 public class Projectiles : MonoBehaviour
 {
+   
     public PlayerSpells currentSpell;
     public PlayerSpells impact, fireball, dart, poisionDart;
 
     public void Start()
     {
-        currentSpell = impact;
+        if (gameObject.tag == "IO")
+        {
+            currentSpell = impact;
+        }
+        if (gameObject.tag == "D")
+        {
+            currentSpell = dart;
+        }
+        if (gameObject.tag == "PD")
+        {
+            currentSpell = poisionDart;
+        }
+        if (gameObject.tag == "FB")
+        {
+            currentSpell = fireball;
+        }
         StartCoroutine(DestroyProjectile());
     }
 
-    public void OnTriggerStay2D(Collider2D collision)
-    {
-        if (collision.CompareTag("PD"))
-        {
-            if (Input.GetKeyDown(KeyCode.E))
-            {
-                currentSpell = poisionDart;
-                Destroy(collision.gameObject);
-            }
-        }
-        if (collision.CompareTag("FB"))
-        {
-            if (Input.GetKeyDown(KeyCode.E))
-            {
-                currentSpell = fireball;
-                Destroy(collision.gameObject);
-            }
-        }
-        if (collision.CompareTag("IO"))
-        {
-            if (Input.GetKeyDown(KeyCode.E))
-            {
-                currentSpell = impact;
-                Destroy(collision.gameObject);
-            }
-        }
-        if (collision.CompareTag("D"))
-        {
-            if (Input.GetKeyDown(KeyCode.E))
-            {
-                currentSpell = dart;
-                Destroy(collision.gameObject);
-            }
-        }
-    }
+    
 
     public void OnCollisionEnter2D(Collision2D collision)
     {
@@ -55,6 +37,7 @@ public class Projectiles : MonoBehaviour
         {
             EnemyHealth enemyHealth = collision.transform.GetComponent<EnemyHealth>();
             enemyHealth.TakeDamage(currentSpell.damage);
+            print(currentSpell.damage);
             GameObject effect = Instantiate(currentSpell.destroyEffect, transform.position, Quaternion.identity);
             Destroy(effect, 5f);
             Destroy(gameObject);
@@ -78,8 +61,8 @@ public class Projectiles : MonoBehaviour
     IEnumerator DestroyProjectile()
     {
         yield return new WaitForSeconds(currentSpell.lifetime);
-        GameObject effect2 = Instantiate(currentSpell.destroyEffect, transform.position, Quaternion.identity);
-        Destroy(effect2, 5f);
+        GameObject effect3 = Instantiate(currentSpell.destroyEffect, transform.position, Quaternion.identity);
+        Destroy(effect3, 5f);
         Destroy(gameObject);
     }
 }
