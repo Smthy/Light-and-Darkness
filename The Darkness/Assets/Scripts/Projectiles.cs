@@ -29,10 +29,23 @@ public class Projectiles : MonoBehaviour
         StartCoroutine(DestroyProjectile());
     }
 
-    
+
+    public void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Enemy")
+        {
+            EnemyHealth enemyHealth = collision.transform.GetComponent<EnemyHealth>();
+            enemyHealth.TakeDamage(currentSpell.damage);
+            print(currentSpell.damage);
+            GameObject effect = Instantiate(currentSpell.destroyEffect, transform.position, Quaternion.identity);
+            Destroy(effect, 5f);
+            Destroy(gameObject);
+        }        
+    }
 
     public void OnCollisionEnter2D(Collision2D collision)
     {
+        /*
         if(collision.gameObject.tag == "Enemy")
         {
             EnemyHealth enemyHealth = collision.transform.GetComponent<EnemyHealth>();
@@ -42,6 +55,8 @@ public class Projectiles : MonoBehaviour
             Destroy(effect, 5f);
             Destroy(gameObject);
         }
+        */
+
         if(collision.gameObject.tag == "Obstical" || collision.gameObject.tag == "Chest" || collision.gameObject.tag == "BP")
         {
             GameObject effect1 = Instantiate(currentSpell.destroyEffect, transform.position, Quaternion.identity);

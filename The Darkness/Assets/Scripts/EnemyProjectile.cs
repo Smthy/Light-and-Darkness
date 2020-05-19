@@ -5,6 +5,7 @@ using UnityEngine;
 public class EnemyProjectile : MonoBehaviour
 {
     public float speed;
+    public float damage = 20f;
 
     private Transform player;
     private Vector2 target;
@@ -30,7 +31,8 @@ public class EnemyProjectile : MonoBehaviour
     {
         if(collision.gameObject.CompareTag("Player"))
         {
-            Destroy(gameObject);
+            PlayerHealth health = collision.transform.GetComponent<PlayerHealth>();
+            health.TakeDamage(damage);
         }
         if(collision.gameObject.CompareTag("Shield"))
         {

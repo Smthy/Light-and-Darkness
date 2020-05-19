@@ -16,6 +16,7 @@ public class BossMovement : MonoBehaviour
     public float specialAttackStartTimeBtwShots;
 
     public GameObject orbPrefab;
+    public Transform firePoint;
 
     public Transform player;
     public float magicForce = 20f;
