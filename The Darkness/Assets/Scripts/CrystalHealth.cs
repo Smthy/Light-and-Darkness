@@ -5,10 +5,11 @@ using UnityEngine.Experimental.Rendering.LWRP;
 
 public class CrystalHealth : MonoBehaviour
 {
-    public float health = 1000f;
+    public float health = 2000f;
     public Light2D crystalLight;
     public Light2D globalLight;
     public GameObject boss;
+    public GameObject enemy;
 
     public void Start()
     {
@@ -23,22 +24,22 @@ public class CrystalHealth : MonoBehaviour
 
     public void Update()
     { 
-        if(health > 750)
+        if(health > 1500)
         {
             crystalLight.intensity = 1f;
             globalLight.intensity = 1f;
         }
-        else if(health > 500)
+        else if(health > 1000)
         {
             crystalLight.intensity = 0.75f;
             globalLight.intensity = 0.75f;
         }
-        else if(health > 250)
+        else if(health > 500)
         {
             crystalLight.intensity = 0.5f;
             globalLight.intensity = 0.5f;
         }
-        else if(health > 0)
+        else if(health > 250)
         {
             boss.SetActive(true);
             crystalLight.intensity = 0.25f;

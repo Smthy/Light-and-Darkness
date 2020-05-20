@@ -30,7 +30,7 @@ public class Enemy : MonoBehaviour
     {
         float range = Vector2.Distance(transform.position, player.position);
 
-        if (range < 25f)
+        if (range < 22.5f)
         {
             inRange = true;
             Debug.DrawLine(transform.position, player.transform.position, Color.cyan);
