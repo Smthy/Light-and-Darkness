@@ -8,18 +8,20 @@ public class Shooting : MonoBehaviour
     public PlayerSpells currentSpell;
     public PlayerSpells impact, fireball, dart, poisionDart;
     public Transform firePoint;
+    public bool canFire;
     
     public float magicForce = 20f;
     
 
     public void Start()
     {
+        canFire = true;
         currentSpell = impact;        
     }
 
     public void Update()
     {
-        if(Input.GetButtonDown("Fire1"))
+        if(Input.GetButtonDown("Fire1") && canFire)
         {
             Shoot();
         }
@@ -27,12 +29,13 @@ public class Shooting : MonoBehaviour
 
     void Shoot()
     {
-        print(currentSpell.destroyEffect);
+        canFire = false;
         GameObject magic = Instantiate(currentSpell.spell, firePoint.position, firePoint.rotation);
         Rigidbody2D rb = magic.GetComponent<Rigidbody2D>();
-        rb.AddForce(firePoint.up * magicForce, ForceMode2D.Impulse);        
+        rb.AddForce(firePoint.up * magicForce, ForceMode2D.Impulse);
+        StartCoroutine(fireRate());
+        
     }
-
     
     public void OnTriggerStay2D(Collider2D collision)
     {
@@ -42,8 +45,7 @@ public class Shooting : MonoBehaviour
             {
                 currentSpell = poisionDart;
                 Destroy(collision.gameObject);
-            }
-                
+            }                
         }
         if (collision.CompareTag("FB"))
         {
@@ -69,5 +71,12 @@ public class Shooting : MonoBehaviour
                 Destroy(collision.gameObject);
             }
         }
-    }    
+    }
+    
+    IEnumerator fireRate()
+    {
+        yield return new WaitForSeconds(0.35f);
+        canFire = true;
+
+    }
 }
