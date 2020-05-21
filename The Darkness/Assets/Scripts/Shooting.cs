@@ -9,7 +9,8 @@ public class Shooting : MonoBehaviour
     public PlayerSpells impact, fireball, dart, poisionDart;
     public Transform firePoint;
     public bool canFire;
-    
+    public AudioSource sound;
+
     public float magicForce = 20f;
     
 
@@ -31,6 +32,7 @@ public class Shooting : MonoBehaviour
     {
         canFire = false;
         GameObject magic = Instantiate(currentSpell.spell, firePoint.position, firePoint.rotation);
+        sound.Play();
         Rigidbody2D rb = magic.GetComponent<Rigidbody2D>();
         rb.AddForce(firePoint.up * magicForce, ForceMode2D.Impulse);
         StartCoroutine(fireRate());
@@ -75,7 +77,7 @@ public class Shooting : MonoBehaviour
     
     IEnumerator fireRate()
     {
-        yield return new WaitForSeconds(0.35f);
+        yield return new WaitForSeconds(0.25f);
         canFire = true;
 
     }

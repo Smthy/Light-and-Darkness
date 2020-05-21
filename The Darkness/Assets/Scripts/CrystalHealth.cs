@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Experimental.Rendering.LWRP;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class CrystalHealth : MonoBehaviour
 {
@@ -11,9 +13,18 @@ public class CrystalHealth : MonoBehaviour
     public Light2D churchLight;
     public GameObject boss;
     public GameObject e1, e2, e3, e4, e5, e6, e7, e8;
+    public Image fade;
+    public GameObject crystalDeath;
+    public SpriteRenderer crystal1, crystal2, crystal3, crystal4;
+
 
     public void Start()
     {
+        crystal1.enabled = true;
+        crystal2.enabled = true;
+        crystal3.enabled = true;
+        crystal4.enabled = true;
+
         crystalLight.GetComponent<Light>();
         globalLight.GetComponent<Light>();
         churchLight.GetComponent<Light>();
@@ -69,13 +80,14 @@ public class CrystalHealth : MonoBehaviour
         }
         else if (health < 0)
         {
-            crystalLight.intensity = 0f;
             globalLight.intensity = 0f;
             churchLight.intensity = 0f;
-            Destroy(gameObject);
-        }
+            crystal1.enabled = false;
+            crystal2.enabled = false;
+            crystal3.enabled = false;
+            crystal4.enabled = false;
+        }        
     }
-
     public void TakeDamage(float amount)
     {
         health -= amount;
@@ -85,9 +97,21 @@ public class CrystalHealth : MonoBehaviour
             Die();
         }
     }
-
     void Die()
     {
-        Destroy(gameObject);
+        GameObject effect = Instantiate(crystalDeath, transform.position, Quaternion.identity);
+        Destroy(effect, 5f);
+        crystal1.enabled = false;
+        crystal2.enabled = false;
+        crystal3.enabled = false;
+        crystal4.enabled = false;
+        fade.CrossFadeAlpha(1, 1.5f, true);
+        StartCoroutine(EndGame());
+    }
+
+    IEnumerator EndGame()
+    {
+        yield return new WaitForSeconds(3f);
+        SceneManager.LoadScene("Win Screen");
     }
 }

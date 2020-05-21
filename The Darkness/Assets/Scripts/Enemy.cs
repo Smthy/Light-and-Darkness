@@ -17,7 +17,9 @@ public class Enemy : MonoBehaviour
     public float magicForce = 20f;
 
     private bool inRange = false;
-     
+
+    public AudioSource sound;
+
 
     void Start()
     {
@@ -68,6 +70,7 @@ public class Enemy : MonoBehaviour
     {
         if (timeBtwShots <= 0)
         {
+            sound.Play();
             Instantiate(orbPrefab, transform.position, Quaternion.identity);
             timeBtwShots = startTimeBtwShots;
         }

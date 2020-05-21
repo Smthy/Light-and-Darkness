@@ -9,6 +9,9 @@ public class EnemyProjectile : MonoBehaviour
 
     private Transform player;
     private Vector2 target;
+    public GameObject destroyEffect;
+
+    
 
     void Start()
     {
@@ -23,6 +26,9 @@ public class EnemyProjectile : MonoBehaviour
 
         if(transform.position.x == target.x && transform.position.y == target.y)
         {
+            GameObject effect = Instantiate(destroyEffect, transform.position, Quaternion.identity);
+            
+            Destroy(effect, 5f);
             Destroy(gameObject);
         }
     }
@@ -33,9 +39,14 @@ public class EnemyProjectile : MonoBehaviour
         {
             PlayerHealth health = collision.transform.GetComponent<PlayerHealth>();
             health.TakeDamage(damage);
+            GameObject effect = Instantiate(destroyEffect, transform.position, Quaternion.identity);
+            Destroy(effect, 5f);
+            Destroy(gameObject);
         }
         if(collision.gameObject.CompareTag("Shield"))
         {
+            GameObject effect = Instantiate(destroyEffect, transform.position, Quaternion.identity);
+            Destroy(effect, 5f);
             Destroy(gameObject);
         }
     }
@@ -43,6 +54,8 @@ public class EnemyProjectile : MonoBehaviour
     IEnumerator DestroyProjectile()
     {
         yield return new WaitForSeconds(2f);
+        GameObject effect = Instantiate(destroyEffect, transform.position, Quaternion.identity);
+        Destroy(effect, 5f);
         Destroy(gameObject);
     }
 }

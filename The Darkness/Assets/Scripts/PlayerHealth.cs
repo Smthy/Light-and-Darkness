@@ -1,10 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
     public float health = 100f;
+    public GameObject playerDeath;
+    public Image fade;
+    public SpriteRenderer player, left, right;
     public void Update()
     {
         if(health > 100)
@@ -45,6 +50,18 @@ public class PlayerHealth : MonoBehaviour
 
     void Die()
     {
-        Destroy(gameObject);
+        GameObject effect = Instantiate(playerDeath, transform.position, Quaternion.identity);
+        Destroy(effect, 5f);
+        player.enabled = false;
+        right.enabled = false;
+        left.enabled = false;
+        fade.CrossFadeAlpha(1, 1.5f, true);
+        StartCoroutine(EndGame());
+    }
+
+    IEnumerator EndGame()
+    {
+        yield return new WaitForSeconds(3f);
+        SceneManager.LoadScene("Death Screen");
     }
 }

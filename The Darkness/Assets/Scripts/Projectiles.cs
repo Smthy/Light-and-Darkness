@@ -7,6 +7,7 @@ public class Projectiles : MonoBehaviour
    
     public PlayerSpells currentSpell;
     public PlayerSpells impact, fireball, dart, poisionDart;
+    
 
     public void Start()
     {
@@ -45,18 +46,6 @@ public class Projectiles : MonoBehaviour
 
     public void OnCollisionEnter2D(Collision2D collision)
     {
-        /*
-        if(collision.gameObject.tag == "Enemy")
-        {
-            EnemyHealth enemyHealth = collision.transform.GetComponent<EnemyHealth>();
-            enemyHealth.TakeDamage(currentSpell.damage);
-            print(currentSpell.damage);
-            GameObject effect = Instantiate(currentSpell.destroyEffect, transform.position, Quaternion.identity);
-            Destroy(effect, 5f);
-            Destroy(gameObject);
-        }
-        */
-
         if(collision.gameObject.tag == "Obstical" || collision.gameObject.tag == "Chest" || collision.gameObject.tag == "BP")
         {
             GameObject effect1 = Instantiate(currentSpell.destroyEffect, transform.position, Quaternion.identity);

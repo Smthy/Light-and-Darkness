@@ -16,7 +16,7 @@ public class BossMovement : MonoBehaviour
     public float specialAttackStartTimeBtwShots;
 
     public GameObject orbPrefab;
-    public Transform firePoint;
+    public AudioSource sound;
 
     public Transform player;
     public float magicForce = 20f;
@@ -78,6 +78,7 @@ public class BossMovement : MonoBehaviour
              
         if (timeBtwShots <= 0)
         {
+            sound.Play();
             Instantiate(orbPrefab, transform.position, Quaternion.identity);
             timeBtwShots = startTimeBtwShots;
         }
