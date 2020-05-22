@@ -1,2 +1,2 @@
 # Light and Darkness
- Get to the temple, anyway possible
+Destroy the light, kill the spirits, don't get killed.
