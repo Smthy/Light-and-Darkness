@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 546326e8e3d19004bbf90c821b56cc35, type: 3}
   m_Name: PoisionDart
   m_EditorClassIdentifier: 
-  spellName: Poision Dart
+  spellName: Poison Dart
   spell: {fileID: 8539884590468593384, guid: 484e1f2ddb38a3f4e9cb415acf04f55b, type: 3}
   destroyEffect: {fileID: 1798249554434622424, guid: fbb599ad30115664f8a85012f1ec5f02,
     type: 3}

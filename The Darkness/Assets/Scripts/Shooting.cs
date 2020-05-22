@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 
 public class Shooting : MonoBehaviour
@@ -11,13 +12,17 @@ public class Shooting : MonoBehaviour
     public bool canFire;
     public AudioSource sound;
 
+    public Text spellText;
+
     public float magicForce = 20f;
     
 
     public void Start()
     {
         canFire = true;
-        currentSpell = impact;        
+        currentSpell = impact;
+
+        spellText.text = currentSpell.spellName;
     }
 
     public void Update()
@@ -26,6 +31,8 @@ public class Shooting : MonoBehaviour
         {
             Shoot();
         }
+
+        spellText.text = currentSpell.spellName;
     }
 
     void Shoot()

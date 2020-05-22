@@ -10,11 +10,28 @@ public class PlayerHealth : MonoBehaviour
     public GameObject playerDeath;
     public Image fade;
     public SpriteRenderer player, left, right;
+    public Text healthText;
+
+    public void Start()
+    {
+        player.enabled = true;
+        right.enabled = true;
+        left.enabled = true;
+
+        healthText.text = health.ToString();
+    }
+
     public void Update()
     {
         if(health > 100)
         {
             health = 100;
+        }
+
+        healthText.text = (health.ToString()+ " hp");
+        if(health <= 20)
+        {
+            healthText.color = Color.red;
         }
     }
 
